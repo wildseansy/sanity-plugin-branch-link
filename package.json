@@ -1,0 +1,79 @@
+{
+  "name": "sanity-plugin-branch-link",
+  "version": "1.0.1",
+  "description": "Connect branch.io link attributes directly to your sanity data model to faciliate link deep link navigation and link unfurling.",
+  "main": "lib/BranchLink.js",
+  "types": "types/BranchLink.d.ts",
+  "scripts": {
+    "format": "prettier --write .",
+    "clear-lib": "node clearLib.js",
+    "build": "npm run format && npm run clear-lib && tsc --declaration --declarationDir types && sanipack build && tsc --declaration",
+    "dev": "tsc -w",
+    "prepublish": "npm run build",
+    "watch": "sanipack build --watch",
+    "prepublishOnly": "sanipack build && sanipack verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wildseansy/sanity-plugin-branch-link.git"
+  },
+  "keywords": [
+    "sanity",
+    "sanity studio",
+    "sanity plugin",
+    "playback",
+    "video",
+    "audio",
+    "scrubbing",
+    "field",
+    "input",
+    "sanity-plugin"
+  ],
+  "author": "Sean Holbert",
+  "license": "MIT",
+  "dependencies": {
+    "@sanity/base": ">= 2.5.0",
+    "@sanity/react-hooks": "^2.10.5",
+    "@sanity/types": "^2.10.0",
+    "@sanity/ui": ">= 0.33.9",
+    "@sanity/util": ">= 2.5.0",
+    "@types/branch-sdk": "^2.53.2",
+    "branch-sdk": "^2.58.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "eslint": "7.26.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-sanity": "5.1.0",
+    "eslint-plugin-react": "7.23.2",
+    "prettier": "2.3.0",
+    "sanipack": "2.0.1",
+    "typescript": "^4.2.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/wildseansy/sanity-plugin-branch-link/issues"
+  },
+  "homepage": "https://github.com/wildseansy/sanity-plugin-branch-link#readme",
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "parser": "sanipack/babel/eslint-parser",
+    "extends": [
+      "sanity",
+      "sanity/react",
+      "prettier",
+      "prettier/react"
+    ]
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
