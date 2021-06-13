@@ -1,0 +1,7 @@
+build
+lib
+node_modules
+# Compiled plugin
+/types
+
+.DS_Store
